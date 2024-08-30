@@ -1,0 +1,8 @@
+Homme : tête, cou, tronc, bras, jambe ;
+tête : crâne, yeux, oreilles, cheveux, bouche ;
+tronc : abdomen, thorax ;
+thorax : coeur, foie, poumons ;
+jambe : cuisse, mollet, pied ;
+pied : coup-de-pied, orteils, talon ;
+bras : épaule, avant-bras, main ;
+main : doigts ;

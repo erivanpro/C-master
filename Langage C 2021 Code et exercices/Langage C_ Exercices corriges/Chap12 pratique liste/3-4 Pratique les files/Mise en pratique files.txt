@@ -1,0 +1,40 @@
+3.4 Mise en pratique : les files
+
+Exercice 1
+Donner le contenu de la file pour chaque opération de la suite : Q*UES***TI*ON*FAC***IL***E**.
+Chaque lettre provoque un enfilement et chaque astérisque un défilement.
+
+Exercice 2
+Dans une gare un guichet est ouvert. Les clients arrivent à des dates aléatoires et font la queue. L'intervalle entre l'arrivée de deux clients successifs est un nombre aléatoire entre 0 et INTERVAL_MAX en secondes ou en minutes. Lorsque le guichetier a fini avec un client, il ap-pelle le client suivant et le traitement a une durée entre 0 et DUREE_TRAITEMENT_MAX.
+Écrire un programme de simulation.
+
+Exercice 3
+Pour simuler un croisement routier, à sens unique, on utilise 3 files f1, f2 et f3 représentant respectivement les voitures arrivant sur les routes R1 et R2, et les voitures partant sur la route R3. La route R2 a un STOP, les voitures de la file f2 ne peuvent avancer que s’il n’y a au-cune voiture sur la route R1, donc dans la file f1.
+ 
+L’algorithme de simulation utilisera une boucle sans fin.
+À chaque itération, il sera fait un appel à la procédure arrivée(f1, f2) qui simule l’arrivée d’une ou plusieurs voitures des files f1 et f2, modifiant ainsi leur état en mémoire.
+–		Si l'on considère que les files sont infinies, quelle structure de données choisir ?
+–		Admettons que les files ne sont pas infinies. La taille de nos files est limitée à une variable MAX saisie par l’utilisateur et symbolisant le maximum de voitures que peut accueillir une route et la procédure arrivée(f1, f2) prend en compte cette nouvelle hypothèse.
+Programmer une simulation.
+Nous ajoutons maintenant une nouvelle hypothèse à notre problème : le STOP est respecté mais la voiture de la route R2 peut être prioritaire par rapport à la route R1. C'est-à-dire que si la distance entre la première voiture de la route R1 et le croisement est jugée suffisante par votre simulateur, on préférera défiler f2 plutôt que f1. La vitesse des voitures est jugée cons-tante.
+Modifier le programme précédent en ajoutant cette précision.
+
+Exercice 4
+Le but de cet exercice est d'écrire un programme qui simule le déroulement d'une partie du jeu de la bataille.
+Rappel des règles :
+–		On dispose d'un jeu de 32 cartes (4 couleurs et 8 puissances de carte).
+–		Chaque carte possède une couleur (COEUR, CARREAU, TREFLE ou PIQUE) et une puissance (SEPT, HUIT, NEUF, DIX, VALET, DAME, ROI ou AS). On utilisera les codes ASCII 3, 4, 5 et 6 pour représenter les symboles  ,  ,  ,  . Par exemple, la dame de cœur sera affichée D .
+Le jeu est d'abord mélangé aléatoirement pour ensuite être coupé en deux tas de 16 cartes. On en donne un à chaque joueur. La partie peut enfin commencer. Chaque joueur montre la carte au sommet de son tas. Le joueur qui a la carte de plus forte valeur ramasse sa carte et celle de son adversaire et les met sous son tas. En cas d'égalité, les deux cartes sont placées sur un tas d'attente avec, pour chaque joueur, une autre carte prise au sommet de son tas. Ensuite, la partie reprend. Le joueur qui remportera la manche suivante remportera non seulement les deux cartes en jeu mais également toutes celles qui se trouvent dans le tas d'attente.
+Le perdant sera le joueur qui n’a plus de carte dans son tas et le vainqueur celui qui réalise le meilleur score à la fin de la partie.
+Définir des structures de données adaptées pour une carte, un tas de cartes et un jeu de cartes.
+Définir les joueurs. Commencer avec deux joueurs.
+Quelles sont les actions à effectuer et dans quel ordre ?
+Soigner l'affichage du déroulement de la partie.
+Ensuite généraliser pour une partie de bataille entre nb joueurs avec un jeu de cartes imagi-naire de nb cartes avec nb couleurs.
+
+Exercice 5
+Écrire un programme qui transforme une expression infixée (avec parenthèses) en nota-tion postfixée (polonaise inversée). L'expression suivante :
+3*(((12-3)/3)-1)
+devra être traduite en :
+3 12 3 – 3 / 1 - *
+Les opérateurs valides sont : +, -, *, /. L'algorithme lit une suite de caractères et range le résul-tat de la conversion dans une file qui est affichée à la fin.

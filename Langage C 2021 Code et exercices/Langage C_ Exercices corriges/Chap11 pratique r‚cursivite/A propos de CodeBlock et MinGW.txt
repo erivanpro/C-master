@@ -1,0 +1,16 @@
+Le code des exercices compile sous CodeBlock et le compilateur MinGW sauf le démineur avec la librairie allegro 5.
+
+Sous CodeBlock l'utilisation de la librairrie allegro 5 requiert que la librairie soit compilée avec un compilateur de la même version. La version de MinGW fournie avec CodeBlock à lapublication du livre est 8.1.0. les versions compilées d'allegro 5 que l'on peut trouver sur <https://github.com/liballeg/allegro5/releases> supposent la versions 10.2.0 de MinGW.
+
+Alors à priori il faut :
+- soit recomplier allegro ce qui n'est pas forcément simple avec toutes les dépendances (librairies annexes utilisées par allegro qui doivent elles aussi être recompilées).
+- soit installer une nouvelle version de MinGW et ensuite installer la version compatible d'allegro 5. 
+- soit installer visual studio community (gratuit) puis d'obtenir allegro 5 via un package NuGet. Visual studio offre d'autres avantages comme des indications d'erreurs pendant l'écriture du code. C'est une très très bon compilateur avec un IDE professionnel de grande qualité.
+- soit choisir une autre librairie graphique que la version de MinGW acceptera.
+
+
+
+
+
+
+

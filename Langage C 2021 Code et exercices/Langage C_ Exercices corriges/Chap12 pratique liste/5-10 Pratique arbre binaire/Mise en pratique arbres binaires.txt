@@ -1,0 +1,77 @@
+5.10 Mise en pratique : arbre binaire
+
+Exercice 1
+Réaliser un générateur d'arbres binaires DYNAMIQUES contenant des données aléatoires. Générer un arbre. Parcourir l'arbre en profondeur (trois parcours à tester). Parcourir l'arbre en largeur. À chaque fois, afficher l'arbre. Obtenir toutes les propriétés de l'arbre (taille, hau-teur, nombre de feuilles, lister les feuilles, somme des nœuds de l'arbre). Ramener tel ou tel nœud selon une valeur donnée. Sauver l'arbre. Détruire l'arbre. Charger l'arbre.
+
+Exercice 2
+Réaliser un générateur d'arbres binaires STATIQUES contenant des données aléatoires. Géné-rer un arbre. Parcourir l'arbre en profondeur (trois parcours à tester). Parcourir l'arbre en largeur. À chaque fois, afficher l'arbre. 
+Obtenir toutes les propriétés de l'arbre (taille, hauteur, nombre de feuilles, lister les feuilles, somme des nœuds de l'arbre). Ramener tel ou tel nœud selon une valeur donnée. Sauver l'arbre. Détruire l'arbre. Charger l'arbre.
+
+Exercice 3
+Réaliser un générateur d'arbres binaires SUR FICHIER contenant des données aléa-toires. Générer un arbre. Parcourir l'arbre en profondeur (trois parcours à tester). Parcourir l'arbre en largeur. À chaque fois, afficher l'arbre. Obtenir toutes les propriétés de l'arbre (taille, hauteur, nombre de feuilles, lister les feuilles, somme des nœuds de l'arbre). Ramener tel ou tel nœud selon une valeur donnée. Sauver l'arbre. Détruire l'arbre. Charger l'arbre.
+
+Exercice 4
+Représenter l'arbre généalogique d'une famille de son choix ou de son invention. Les informations peuvent être fournies par un fichier texte du style :
+Sonia : Paul, Catherine, Benoit ;
+Paul : Isabelle, Armand ;
+Catherine : Anatole, Eloïse, Brigitte ;
+etc.
+
+Exercice 5
+Une expression arithmétique comme (14 * 5) – (7 / 10) peut prendre la forme d'un arbre. Dans un programme :
+– Construire un arbre à partir d'une expression arithmétique.
+– Écrire une fonction d'évaluation de l'expression arithmétique à partir d'un arbre et donner son résultat.
+– Écrire une fonction qui affiche la traduction en expression postfixée.
+Une expression postfixée (notation polonaise inversée) est du type :  
+5  17  6 – 4 * 2 + * 
+les parenthèses implicites sont : 
+( 5 ( ( ( 17  6  – )  4 * )  2 + ) * ) 
+ce qui équivaut, en notation classique infixée, à : 
+( ( ( 17 – 6 ) * 4 ) + 2 ) * 5
+– Écrire une fonction pour construire un arbre à partir d'une expression postfixée donnée.
+– Écrire une fonction qui construit un arbre à partir d'une expression arithmétique infixée classique (avec parenthèses).
+
+Exercice 6
+Soit la description suivante :
+Homme : tête, cou, tronc, bras, jambes ;
+tête : crâne, yeux, oreilles, cheveux, bouche ;
+tronc : abdomen, thorax ;
+thorax : cœur, foie, poumons ;
+jambe : cuisse, mollet, pied ;
+pied : cou de pied, orteils, talon ;
+bras : épaule, avant-bras, main ;
+main : doigts ;
+Dans un programme, faire l'arbre n-aire, puis l'arbre binaire correspondant.
+Sur le modèle de cette description, faire l'arbre des composants d'une voiture. Toujours sur ce modèle analyser un sujet ou un objet de son choix et représenter l'arbre correspondant dans un programme.
+
+Exercice 7
+Simuler la gestion d'un tournoi de tennis sous la forme d'un arbre binaire. Les informations de chaque match sont conservées. À l'issue du tournoi, le match de finale se trouve à la racine de l'arbre.
+
+Exercice 8
+Soit la description suivante :
+Terre : Europe, Asie, Afrique, Amérique, Océanie ;
+Europe : France, Espagne, Italie, Allemagne, Belgique ;
+Asie : Chine, Inde, Japon ;
+Afrique : Burkina, Côte d'Ivoire ;
+Dans un programme, faire l'arbre n-aire, puis l'arbre binaire correspondant.
+Sur ce modèle faire, par exemple, la carte de vos lieux favoris.
+
+Exercice 9
+Objectifs : parcourir et ajouter dans un arbre binaire
+La représentation d'un domaine dont les concepts sont hiérarchisés sous forme d'arbre binaire peut s'appliquer aussi bien à des tâches de classification/identification (d'animaux, de végétaux, de minéraux...) qu'à des tâches de diagnostic (diagnostic médical, détection de panne...).
+Par exemple :
+ 
+Dans cet exemple, l'ordinateur pose des questions pour essayer de découvrir un animal auquel vous pensez. Vous ne pouvez répondre que par OUI ou NON. S'il échoue, il vous demande de lui fournir une question qui caractérise l'animal qu'il n'a pas trouvé, ce qui permet de réaliser une certaine forme d'apprentissage. Trouver un animal consiste à parcourir un arbre binaire dont les nœuds internes sont des questions et les feuilles des animaux. La phase d’apprentissage consiste, si l’utilisateur le souhaite, à ajouter l’animal non trouvé dans l’arbre (voir trace d’exécution en page suivante).
+Afin de garder une trace de cet arbre binaire, celui-ci est sauvegardé dans un fichier.
+Deux approches sont possibles : sur fichier en accès direct ou en dynamique en mémoire cen-trale. Pour commencer, faites plutôt un arbre dynamique (mais vous pouvez opter pour un arbre sur fichier si vous préférez). La sauvegarde sur fichier d'un arbre dynamique pourra être réalisée grâce à un parcours en largeur de l'arbre.
+À faire :
+Définir en C la structure de données pour un nœud de l’arbre.
+– À quelle(s) condition(s) sait-on différencier un nœud interne d’une feuille ?
+– Quel est l’ordre de parcours (infixé, préfixé ou postfixé) de l’arbre affiché dans la trace d’exécution de la page suivante ? Justifier. Donner les 2 autres ordres de parcours.
+– Écrire, commenter et tester les fonctions suivantes en respectant la trace d’exécution de la page suivante :
+– Affichage d'un arbre de jeu.
+– Parcours d'un arbre de jeu en posant les questions à l'utilisateur.
+– Apprentissage d'un nouvel animal par ajout d'une question et d'une réponse.
+– Toute autre fonction jugée nécessaire.
+– Envisager la sauvegarde et le chargement de l'arbre dans le programme.
+Pour la trace d'exécution, on a utilisé les caractères normaux pour ce qui est affiché à l'écran par le programme, les commentaires sont en italique et les réponses tapées par l'utilisateur en caractères souligné.

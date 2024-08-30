@@ -1,0 +1,33 @@
+2.4 Mise en pratique : les piles
+
+Exercice 1
+Écrire un programme qui affiche une liste chaînée simple à l'envers en utilisant une pile.
+
+Exercice 2
+Donner le contenu de la pile pour chaque opération de la suite :
+Q*UES***TI*ON*FAC***IL***E**.
+Chaque lettre provoque un empilement et chaque astérisque un dépilement.
+Faire de même avec la suite : EAS*Y*QUE***ST***IO*N***.
+
+Exercice 3
+Un fichier texte peut contenir des parenthèses( ), des crochets [ ] et des accolades { }. Ces élé-ments peuvent être imbriqués les uns dans les autres, par exemple : { a(bc[d])[{ef}(g)]}. Écrire une fonction qui parcourt le fichier texte et détermine si le fichier est correctement structuré. À savoir, parenthèses, crochets et accolades doivent être correctement refermés et imbriqués. Par exemple ({]}) et ({)} ne sont pas corrects.
+
+Exercice 4
+Écrire un programme qui, à l’aide d’une pile, évalue l’expression arithmétique postfixée :
+5 11 9 + 2 12 * - 8 / *.
+Puis à l’aide d’une autre pile, transformer l’expression postfixée en son expression in-fixée (opérateur entre 2 opérandes le tout entre parenthèses).
+
+Exercice 5
+Les internautes utilisent un logiciel pour naviguer sur Internet. Parmi ces fonctions il y a celle qui permet de revenir sur une page déjà accédée via son adresse URL (http://www...). Cette fonction est activée à l'aide de l'icône représentant la flèche. Pour réaliser cette fonctionnalité, le navigateur conserve un historique des adresses URL de chaque page accédée de façon à pouvoir y accéder de nouveau au besoin. Les adresses des pages sont mémorisées selon l'ordre d'accès du plus récent au moins récent. Après un certain temps, cet historique peut contenir la même page plus d'une fois. On souhaite pouvoir éviter les doublons : ne garder en mémoire qu’une seule version URL de chaque page multiple, ceci tout en préservant l’ordre d’accès du plus récent au moins récent.
+Programmer une simulation.
+1) Quelle structure de données envisager ?
+2) Tester avec un programme qui initialise un historique d’adresses URL contenant des dou-blons.
+3) Comment éviter les doublons dans l'historique ? Quelle solution pour référencer toutes les pages, y compris multiples, sans garder leur adresse URL en doublon ?
+
+Exercice 6
+Soient trois piles P1, P2 et P3 pouvant contenir un nombre illimité d’objets.
+Au début, des objets de tailles différentes peuvent être empilés de manière désordonnée dans la première pile P1. Cette pile n’est soumise à aucune contrainte : un objet plus grand peut donc être empilé sur un plus petit. Nous supposerons donc que l’appel à la procédure Empile-rEnVrac(P1) empile de manière désordonnée plusieurs objets dans la pile P1.
+On souhaite trier ces objets par taille dans la seconde pile P2, soumise quant à elle à la con-trainte suivante : un objet plus petit ne peut être empilé que sur un objet plus grand. Pour cela, on dépile les objets de la première pile P1 un par un, et on les empile dans la seconde pile P2 en respectant cette contrainte d’ordre d’empilement.
+Si la taille de l’objet en sommet de P1 est plus grande que celle en sommet de P2, la troisième pile P3 intermédiaire s’avère indispensable. Tout comme P1, cette troisième pile P3 n’est sou-mise à aucune contrainte d’ordre d’empilement.
+ 
+Écrire un programme de simulation pour n objets entrés par l'utilisateur.

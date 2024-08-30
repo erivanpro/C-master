@@ -1,0 +1,3 @@
+Ne fonctionne plus sous windows 10 avec la version 1809.
+Un probable bug du côté microsoft, une enquête est ouverte :
+https://github.com/MicrosoftDocs/Console-Docs/issues/85

@@ -1,0 +1,131 @@
+/*
+Exercice 2
+Donner le contenu de la pile pour chaque opération de la suite :
+Q*UES***TI*ON*FAC***IL***E**.
+Chaque lettre provoque un empilement et chaque astérisque un dépilement.
+Faire de même avec la suite : EAS*Y*QUE***ST***IO*N***.
+*/
+
+/*resultat pour Q*UES***TI*ON*FAC***IL***E** : rien
+
+résultat pour EAS*Y*QUE***ST***IO*N*** : rien 
+
+
+*/
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+#include<time.h>
+#include<string.h>
+
+typedef struct Elem
+{
+	int val;
+	struct Elem* suiv;
+}Elem;
+
+void Menu();
+void VerifierResPile(Elem** pile, char* instructions);
+Elem* CreateElem(int val);
+void EmpilerElem(Elem** prem, Elem* e);
+Elem* DepilerElem(Elem** prem);
+void DisplayElems(Elem* prem);
+void DestroyElems(Elem** prem);
+
+int main()
+{
+	int fin = 0;
+	Elem* Pile = NULL;
+	char* p1 = "Q*UES***TI*ON*FAC***IL***E**";
+	char* p2 = "EAS*Y*QUE***ST***IO*N***";
+
+	srand((unsigned int)time(NULL));
+	Menu();
+	while (fin != 'q') {
+		switch (_getch()) {
+			case 'a': // créer la pile 1
+				if(Pile!=NULL)
+					DestroyElems(&Pile);
+				VerifierResPile(&Pile, p1);
+				break;
+
+			case 'z':		// créer la pile 2
+				if (Pile != NULL) 
+					DestroyElems(&Pile);
+				VerifierResPile(&Pile, p2);
+				break;
+			case 'q':
+				fin = 'q';
+				break;
+		}
+	}
+	DestroyElems(&Pile);
+	return 0;
+}
+void Menu()
+{
+	printf("a : resultat premiere chaine de commandes\n");
+	printf("z : resultat seconde chaine de commandes\n");
+	printf("q : Quitter\n");
+}
+void VerifierResPile(Elem** pile, char*instructions)
+{
+	for (unsigned int i = 0; i < strlen(instructions); i++) {
+		printf("%c", instructions[i]);
+		if (instructions[i] == '*')
+			free(DepilerElem(pile));
+		else
+			EmpilerElem(pile, CreateElem(instructions[i]));
+	}
+	printf("    Res : ");
+	DisplayElems(*pile);
+}
+Elem* CreateElem(int val)
+{
+	Elem* e = (Elem*)malloc(sizeof(Elem));
+	if (e) {
+		e->val = val;
+		e->suiv = NULL;
+	}
+	return e;
+}
+void EmpilerElem(Elem * *prem, Elem * e)  // empiler
+{
+	if (*prem == NULL)
+		* prem = e;
+	else {
+		e->suiv = *prem;
+		*prem = e;
+	}
+}
+Elem* DepilerElem(Elem * *prem) // dépiler
+{
+	Elem* e = NULL;
+	if (*prem != NULL) {
+		e = *prem;
+		*prem = (*prem)->suiv;
+		e->suiv = NULL;  // attention ! ne pas oublier
+	}
+	return e;
+}
+void DisplayElems(Elem * prem)
+{
+	if (prem == NULL)
+		printf("liste vide\n");
+	else {
+		while (prem != NULL) {
+			printf("%d->", prem->val);
+			prem = prem->suiv;
+		}
+		putchar('\n');
+	}
+}
+void DestroyElems(Elem **prem)
+{
+	while (*prem != NULL) {
+		Elem* e = DepilerElem(prem);
+		free(e);
+	}
+	*prem = NULL;
+}

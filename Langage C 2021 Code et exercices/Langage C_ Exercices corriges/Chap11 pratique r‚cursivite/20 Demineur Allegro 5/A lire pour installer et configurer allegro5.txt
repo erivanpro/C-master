@@ -1,0 +1,43 @@
+/* // Version graphique sous allegro 5
+
+Pour l'installation d'allegro (une connexion internet est nécessaire):
+- dans la solution selectionnez le projet
+- cliquez droit dessus 
+- dans le menu sélectionnez "Grérer les packages NuGet..." 
+- dans la page NuGet cliquez en haut à gauche sur "Parcourir" et entrez
+  allegro 5 dans la barre de recherche juste en dessous
+- dans la liste sélectionner Allegro (logo crocodile) par allegro developers Allegro 5
+- dans la partie à droite de la page cliquez sur installer
+En principe allegro s'installe pour le projet avec ses dépendances sans problème.
+
+ATTENTION
+Dans le projet il faut indiquer quels modules d'allegro le programme utilise.
+Pour ce faire :
+- dans la solution selectionnez le projet
+- cliquez droit dessus
+- dans le menu sélectionnez "propriétés" tout en bas. 
+- ouvrez "Allegro 5" puis en dessous sélectionnez "Add-ons"
+- Dans le coin hautgauche de la fenêtre qui s'ouvre à droite sélectionnez "toute configurations"
+- Ensuite sur la droite en dessous mettez "primitive addon", "Dialog addon", TrueType Font addon 
+  et Font Addon sur "oui" (il suffit de cliquer en face et une boite de choix apparait).
+- pour finir cliquez sur "appliquer"
+
+N'oubliez pas cette opération. Plus tard si vous voulez ajouter des images il faudra faire de 
+même avec image add-on. Dans le doute on peut tout mettre sur "oui"
+
+Remarque :
+En l'état le projet est configuré pour être utilisé avec les dll corresondantes. Ces dll doivent 
+être placées avec l'exécutable, au même niveau dans le même folder. C'est réalisé automatiquement 
+par visual studio.
+
+Pour une version release il peut être préférable de ne plus avoir ces dll. Dans ce cas revenez à 
+la fenêtre propriétés :
+- en haut à gauche dans "Configuration" sélectionnez "debug" ou "active debug" si le mode courant.
+- en dessous ouvrez l'onlet "allegro 5" sur la gauche et en dessous de "Add-ons"
+  sélectionnez "Libary Type". Dans la page à droite sélectionnez "Dynamic debug-dynamic runtime"
+- en haut à gauche dans "Configuration" sélectionnez maintenant "release".
+  Dans l'onlet "allegro 5" sur la gauche sélectionnez "Libary Type" et sur la droite 
+  "Static Monolith Release".
+
+- poour finir cliquez sur "appliquer"
+*/

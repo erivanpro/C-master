@@ -1,0 +1,7 @@
+6.Mise en pratique : arbres
+
+Exercice 1
+Générer un arbre binaire de recherche. Rechercher dedans un élément selon sa clé. Supprimer un élément. Afficher l'arbre. Faire la somme des éléments de l'arbre. Lister tous les éléments de l'arbre, etc.
+
+Exercice 2
+Faire un compteur d'occurrence de mots à partir d'un texte fourni par exemple sur fichier texte.
